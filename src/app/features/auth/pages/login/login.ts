@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Auth } from '../../../../core/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class Login {
   password = '';
 
   constructor(
-    private auth: Auth
+    private auth: Auth,
+    private router: Router
   ) {}
 
   login() {
@@ -42,7 +44,7 @@ export class Login {
           'Usuario guardado:',
           this.auth.getUser()
         );
-
+        this.router.navigate(['/dashboard']);
       },
 
       error: (error) => {

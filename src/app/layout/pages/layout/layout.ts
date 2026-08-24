@@ -14,5 +14,4 @@ import { Sidebar } from '../../components/sidebar/sidebar';
   styleUrl: './layout.scss'
 })
 export class Layout {
-
 }
